@@ -128,7 +128,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DecisionTree.cpp" />
+    <ClCompile Include="Display.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="RandomForest.cpp" />
+    <ClCompile Include="StressSolve.cpp" />
     <ClCompile Include="StressSolveApp.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="SuggestionMaker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DecisionTree.h" />
+    <ClInclude Include="Display.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="RandomForest.h" />
+    <ClInclude Include="StressSolve.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="SuggestionMaker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

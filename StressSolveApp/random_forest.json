@@ -1,0 +1,1182 @@
+{
+    "max_depth": 5,
+    "n_trees": 28,
+    "trees": [
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        },
+        {
+            "root": {
+                "feature_index": 0,
+                "is_leaf": false,
+                "left": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "right": {
+                        "feature_index": 0,
+                        "is_leaf": false,
+                        "left": {
+                            "is_leaf": true,
+                            "label": 0
+                        },
+                        "right": {
+                            "is_leaf": true,
+                            "label": 1
+                        },
+                        "threshold": 1.149999976158142
+                    },
+                    "threshold": 0.800000011920929
+                },
+                "right": {
+                    "feature_index": 0,
+                    "is_leaf": false,
+                    "left": {
+                        "is_leaf": true,
+                        "label": 0
+                    },
+                    "right": {
+                        "is_leaf": true,
+                        "label": 1
+                    },
+                    "threshold": 2.700000047683716
+                },
+                "threshold": 1.9500000476837158
+            }
+        }
+    ]
+}
