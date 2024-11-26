@@ -1,0 +1,187 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f500f92c33bc8898f221.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "gui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-6c4ec6276bd5d9d0bd22.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-208a637065b4252bdc53.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-8b355ba49108cf2286a8.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-6645078359e92d7aea02.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-651bb9f5fff81f76b488.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui-Debug-7d01161ecdeb1e8c900b.json",
+					"name" : "appgui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_autogen-Debug-b944b2c0f609a138ac5d.json",
+					"name" : "appgui_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_autogen_timestamp_deps-Debug-6fe4b6b561608c539bd4.json",
+					"name" : "appgui_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_qmlimportscan-Debug-7926d9c53c7d52294587.json",
+					"name" : "appgui_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_qmllint-Debug-546ea2b3bf43bb53709e.json",
+					"name" : "appgui_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_qmllint_json-Debug-522ac04c88246bfd0e06.json",
+					"name" : "appgui_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_qmllint_module-Debug-0aef0b8cc783c087521a.json",
+					"name" : "appgui_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_qmltyperegistration-Debug-d0e828afaf490cbe7238.json",
+					"name" : "appgui_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appgui_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appgui_tooling-Debug-e318550ec7022aa22ba3.json",
+					"name" : "appgui_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appgui_aotstats_targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appgui_aotstats_targets-Debug-335598c76f363c33c3da.json",
+					"name" : "module_appgui_aotstats_targets",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug",
+		"source" : "/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

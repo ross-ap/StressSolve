@@ -1,0 +1,14 @@
+-rootPath
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui
+-cmake-output
+-output-file
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug/.qt/qml_imports/appgui_build.cmake
+-importPath
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug/gui
+-importPath
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug
+-importPath
+/home/ross/Qt/6.8.0/gcc_64/qml
+-qrcFiles
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/qmake_gui.qrc
+/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/build/Desktop_Qt_6_8_0-Debug/.qt/rcc/appgui_raw_qml_0.qrc
