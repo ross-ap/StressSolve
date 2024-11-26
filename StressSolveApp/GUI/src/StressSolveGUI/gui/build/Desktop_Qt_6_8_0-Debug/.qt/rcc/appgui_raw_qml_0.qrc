@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/gui/">
-    <file alias="Main.qml">/home/ross/StressSolve/StressSolveApp/GUI/src/StressSolveGUI/gui/Main.qml</file>
-  </qresource>
-</RCC>
-
