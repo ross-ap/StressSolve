@@ -3,7 +3,7 @@
 #include "SuggestionMaker.h"
 #include "Student.h"
 #include "Display.h"
-#include "include/json.hpp"
+#include "json.hpp"
 
 #include <fstream>
 #include <iostream>

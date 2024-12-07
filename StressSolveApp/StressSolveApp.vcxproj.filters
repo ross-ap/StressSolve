@@ -15,51 +15,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StressSolveApp.cpp">
+    <ClCompile Include="src\DecisionTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
+    <ClCompile Include="src\Display.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DecisionTree.cpp">
+    <ClCompile Include="src\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandomForest.cpp">
+    <ClCompile Include="src\RandomForest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Student.cpp">
+    <ClCompile Include="src\StressSolve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StressSolve.cpp">
+    <ClCompile Include="src\StressSolveApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SuggestionMaker.cpp">
+    <ClCompile Include="src\Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Display.cpp">
+    <ClCompile Include="src\SuggestionMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="include\DecisionTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DecisionTree.h">
+    <ClInclude Include="include\Display.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RandomForest.h">
+    <ClInclude Include="include\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Student.h">
+    <ClInclude Include="include\RandomForest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StressSolve.h">
+    <ClInclude Include="include\StressSolve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SuggestionMaker.h">
+    <ClInclude Include="include\Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Display.h">
+    <ClInclude Include="include\SuggestionMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
