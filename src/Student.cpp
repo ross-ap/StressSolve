@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Student.h"
 #include <string>
 #include <vector>

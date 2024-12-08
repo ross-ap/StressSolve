@@ -36,4 +36,6 @@
 .vs/
 
 # Compiled files
-StressSolveApp/StressSolveApp/
+
+# User files
+random_forest.json

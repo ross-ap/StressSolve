@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "SuggestionMaker.h"
 #include <string>
 #include <vector>

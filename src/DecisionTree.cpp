@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "DecisionTree.h"
 #include "Node.h"
 

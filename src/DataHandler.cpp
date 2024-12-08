@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "DataHandler.h"
 #include <limits>
 #include <fstream>

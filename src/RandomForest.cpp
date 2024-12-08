@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "RandomForest.h"
 
 #include <iostream>

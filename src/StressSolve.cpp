@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "StressSolve.h"
 #include "RandomForest.h"
 #include "SuggestionMaker.h"
