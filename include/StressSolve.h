@@ -20,7 +20,7 @@ public:
 	StressSolve();
 	void add_student(Student student);
 
-	void predict(Student student);
+	int predict(Student student);
 
 	void give_suggestion(Student student);
 

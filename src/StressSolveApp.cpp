@@ -6,10 +6,40 @@
 #include "StressSolveApp.h"
 #include <QFileDialog>  // Include QFileDialog
 
+
+QStringList static generate_range(int start, int end) {
+	QStringList range;
+    for (int i = start; i <= end; i++) {
+		range.append(QString::number(i));
+    }
+    return range;
+}
+
 StressSolveApp::StressSolveApp(QWidget *parent): QMainWindow(parent) {
     ui.setupUi(this);
     dataset = new DataHandler();
     stressSolve = new StressSolve();
+
+	ui.comboBox->addItems(generate_range(0, 21));
+	ui.comboBox_2->addItems(generate_range(0, 30));
+	ui.comboBox_3->addItems(generate_range(0, 1));
+	ui.comboBox_4->addItems(generate_range(0, 27));
+	ui.comboBox_5->addItems(generate_range(0, 5));
+	ui.comboBox_6->addItems(generate_range(1, 3));
+	ui.comboBox_7->addItems(generate_range(0, 5));
+	ui.comboBox_8->addItems(generate_range(0, 5));
+	ui.comboBox_9->addItems(generate_range(0, 5));
+	ui.comboBox_10->addItems(generate_range(0, 5));
+	ui.comboBox_11->addItems(generate_range(0, 5));
+	ui.comboBox_12->addItems(generate_range(0, 5));
+	ui.comboBox_13->addItems(generate_range(0, 5));
+	ui.comboBox_14->addItems(generate_range(0, 5));
+	ui.comboBox_15->addItems(generate_range(0, 5));
+	ui.comboBox_16->addItems(generate_range(0, 5));
+	ui.comboBox_17->addItems(generate_range(0, 3));
+	ui.comboBox_18->addItems(generate_range(0, 5));
+	ui.comboBox_19->addItems(generate_range(0, 5));
+	ui.comboBox_20->addItems(generate_range(0, 5));
 }
 
 StressSolveApp::~StressSolveApp() {
@@ -182,4 +212,35 @@ void StressSolveApp::on_imputeButton_clicked() {
     setTrainingWidgetStates(true);
 
     QMessageBox::information(this, "Data Imputation", "Imputation finished.\nImputed with neighbour count: " + QString::number(ui.imputeKNNLimit->value()));
+}
+
+void StressSolveApp::on_predictButton_clicked() {
+	std::vector<float> features;
+
+    // Till combobox_20
+	features.push_back(ui.comboBox->currentText().toFloat());
+	features.push_back(ui.comboBox_2->currentText().toFloat());
+	features.push_back(ui.comboBox_3->currentText().toFloat());
+	features.push_back(ui.comboBox_4->currentText().toFloat());
+	features.push_back(ui.comboBox_5->currentText().toFloat());
+	features.push_back(ui.comboBox_6->currentText().toFloat());
+	features.push_back(ui.comboBox_7->currentText().toFloat());
+	features.push_back(ui.comboBox_8->currentText().toFloat());
+	features.push_back(ui.comboBox_9->currentText().toFloat());
+	features.push_back(ui.comboBox_10->currentText().toFloat());
+	features.push_back(ui.comboBox_11->currentText().toFloat());
+	features.push_back(ui.comboBox_12->currentText().toFloat());
+	features.push_back(ui.comboBox_13->currentText().toFloat());
+	features.push_back(ui.comboBox_14->currentText().toFloat());
+	features.push_back(ui.comboBox_15->currentText().toFloat());
+	features.push_back(ui.comboBox_16->currentText().toFloat());
+	features.push_back(ui.comboBox_17->currentText().toFloat());
+	features.push_back(ui.comboBox_18->currentText().toFloat());
+	features.push_back(ui.comboBox_19->currentText().toFloat());
+	features.push_back(ui.comboBox_20->currentText().toFloat());
+
+	Student student(features);
+	int prediction = stressSolve->predict(student);
+	ui.predict_output->setText(QString::number(prediction));
+
 }

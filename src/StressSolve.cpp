@@ -22,10 +22,11 @@ void StressSolve::add_student(Student student) {
 	students.push_back(student);
 }
 
-void StressSolve::predict(Student student) {
+int StressSolve::predict(Student student) {
 	std::vector<float> features = student.get_features();
 	int prediction = rf->predict(features);
-	display.display_stress_level(prediction);
+	return prediction;
+	//display.display_stress_level(prediction);
 }
 
 void StressSolve::give_suggestion(Student student) {

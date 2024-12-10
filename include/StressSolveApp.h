@@ -21,6 +21,7 @@ private slots:
     void on_modelTrainButton_clicked();
     void on_datasetChooseButton_clicked();
     void on_imputeButton_clicked();
+    void on_predictButton_clicked();
 
 private:
     Ui::StressSolveAppClass ui;
