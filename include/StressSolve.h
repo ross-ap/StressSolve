@@ -24,7 +24,7 @@ public:
 
 	void give_suggestion(Student student);
 
-	void test_train_model(int tree_count, int max_depth, int fold_count);
+	float test_train_model(int tree_count, int max_depth, int fold_count);
 
 	void train_model(int tree_count, int max_depth);
 

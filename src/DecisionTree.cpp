@@ -24,7 +24,7 @@ void DecisionTree::print_tree_structure() {
 }
 
 Node* DecisionTree::build_tree(const std::vector<std::vector<float>>& features, const std::vector<int>& labels, int depth) {
-    if (depth >= max_depth && max_depth != -1) return create_leaf(labels); // Max depth reached
+    if (depth >= max_depth && max_depth != 0) return create_leaf(labels); // Max depth reached
     if (is_pure(labels)) return create_leaf(labels); // Stopping criteria
 
     int best_feature;

@@ -20,9 +20,17 @@ RandomForest::RandomForest(int n_trees, int max_depth)
     }
 }
 
-void RandomForest::fit(const std::vector<std::vector<float>>& X, const std::vector<int>& y) {
+int RandomForest::get_n_trees() {
+    return n_trees;
+}
+
+int RandomForest::get_max_depth() {
+    return max_depth;
+}
+
+void RandomForest::fit(const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
     for (auto& tree : trees) {
-        auto [bootstrapped_X, bootstrapped_y] = bootstrap(X, y);
+        auto [bootstrapped_X, bootstrapped_y] = bootstrap(features, labels);
         tree.fit(bootstrapped_X, bootstrapped_y);
     }
 }
@@ -35,8 +43,8 @@ int RandomForest::predict(const std::vector<float>& x) {
     return majority_vote(predictions);
 }
 
-float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<std::vector<float>>& X, const std::vector<int>& y) {
-    int n = X.size();
+float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
+    int n = features.size();
     int fold_size = n / fold_count;
     float total_accuracy = 0.0f;
 
@@ -51,36 +59,36 @@ float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<st
         int end = (i == fold_count - 1) ? n : start + fold_size; // Last fold might take the remainder
 
         // Create training and validation sets
-        std::vector<std::vector<float>> train_X, test_X;
-        std::vector<int> train_y, test_y;
+        std::vector<std::vector<float>> train_features, test_features;
+        std::vector<int> train_labels, test_labels;
 
         for (int j = 0; j < n; ++j) {
             if (j >= start && j < end) {
                 // Validation data
-                test_X.push_back(X[indices[j]]);
-                test_y.push_back(y[indices[j]]);
+                test_features.push_back(features[indices[j]]);
+                test_labels.push_back(labels[indices[j]]);
             }
             else {
                 // Training data
-                train_X.push_back(X[indices[j]]);
-                train_y.push_back(y[indices[j]]);
+                train_features.push_back(features[indices[j]]);
+                train_labels.push_back(labels[indices[j]]);
             }
         }
 
         // Fit the random forest on the training data
-        this->fit(train_X, train_y);
+        this->fit(train_features, train_labels);
 
         // Evaluate on the test data
         int correct_predictions = 0;
-        for (int j = 0; j < test_X.size(); ++j) {
-            if (this->predict(test_X[j]) == test_y[j]) {
+        for (int j = 0; j < test_features.size(); ++j) {
+            if (this->predict(test_features[j]) == test_labels[j]) {
                 correct_predictions++;
             }
         }
 
-        float accuracy = static_cast<float>(correct_predictions) / test_X.size();
+        float accuracy = static_cast<float>(correct_predictions) / test_features.size();
         total_accuracy += accuracy;
-        std::cout << "Fold " << (i + 1) << " Accuracy: " << accuracy << std::endl;
+        qDebug() << "Fold " << (i + 1) << " Accuracy: " << accuracy;
     }
 
     return total_accuracy / fold_count; // Average accuracy across folds
@@ -130,6 +138,7 @@ json RandomForest::to_json() const {
     json j;
     j["n_trees"] = n_trees;
     j["max_depth"] = max_depth;
+	j["trees"] = json::array();
     for (const auto& tree : trees) {
         j["trees"].push_back(tree.to_json());
     }

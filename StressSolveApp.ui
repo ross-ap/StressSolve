@@ -6,50 +6,700 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>1600</width>
+    <height>900</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1600</width>
+    <height>900</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>StressSolveApp</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>120</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ok</string>
-    </property>
-   </widget>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>9999</width>
+        <height>9999</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabWidgetPage1">
+       <attribute name="title">
+        <string>Train Model</string>
+       </attribute>
+       <widget class="QLabel" name="modelLabelText">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>250</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Currently Selected Model</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="modelNameLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>80</y>
+          <width>50</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Name:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="modelPathLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>120</y>
+          <width>50</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Path:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="modelPath">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>120</y>
+          <width>500</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modelLoadButton">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>40</y>
+          <width>80</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Model</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modelSaveButton">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>40</y>
+          <width>80</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Model</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="modelName">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>80</y>
+          <width>500</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="datasetLabel">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>220</y>
+          <width>50</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Dataset:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="datasetPath">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>220</y>
+          <width>500</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="datasetChooseButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>1400</x>
+          <y>220</y>
+          <width>100</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Choose Dataset</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="datasetLineCount">
+        <property name="geometry">
+         <rect>
+          <x>810</x>
+          <y>260</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Lines: 0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="datasetFeatureCount">
+        <property name="geometry">
+         <rect>
+          <x>950</x>
+          <y>260</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Features: 0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="datasetTable">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>310</y>
+          <width>681</width>
+          <height>501</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>719</x>
+          <y>0</y>
+          <width>3</width>
+          <height>900</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>20</y>
+          <width>400</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Impute Missing Data</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>960</x>
+          <y>70</y>
+          <width>200</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Nearest Neighbour Count:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="imputeKNNLimit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>1190</x>
+          <y>70</y>
+          <width>80</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>0</number>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="imputeButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>1060</x>
+          <y>130</y>
+          <width>150</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Impute</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="datasetMissingCount">
+        <property name="geometry">
+         <rect>
+          <x>1139</x>
+          <y>260</y>
+          <width>371</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Number of lines with missing features: 0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>180</y>
+          <width>861</width>
+          <height>5</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>190</y>
+          <width>200</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font/>
+        </property>
+        <property name="text">
+         <string>Train Model</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modelCreateNewButton">
+        <property name="geometry">
+         <rect>
+          <x>259</x>
+          <y>40</y>
+          <width>121</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Create New Model</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="numberOfTrees">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>230</y>
+          <width>60</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="numberOfTreeLabel">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>230</y>
+          <width>111</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of Trees: </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="treeMaxDepthLabel">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>230</y>
+          <width>190</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Max Tree Depth (Set 0 for no limit):</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="treeMaxDepth">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>230</y>
+          <width>60</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modelTrainButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>450</y>
+          <width>120</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Train Model</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>720</width>
+          <height>3</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>720</width>
+          <height>5</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="kFoldAccuracyLabel">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>370</y>
+          <width>340</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>K-Fold Validation Accuracy:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modelTestTrainButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>380</y>
+          <width>120</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Test Train</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="numberOfKFoldLabel">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>310</y>
+          <width>111</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of k-folds:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="numberOfKFold">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>310</y>
+          <width>60</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="minimum">
+         <number>3</number>
+        </property>
+        <property name="maximum">
+         <number>15</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="percentTrainDataLabel">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>310</y>
+          <width>181</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Percentage of train data:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="percentTrainData">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>310</y>
+          <width>60</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="minimum">
+         <number>50</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="kFoldAccuracy">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>380</y>
+          <width>91</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0 %</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabWidgetPage2">
+       <attribute name="title">
+        <string/>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>1600</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-    <addaction name="actionExit"/>
-   </widget>
-   <addaction name="menuFile"/>
   </widget>
-  <action name="actionExit">
-   <property name="text">
-    <string>Exit</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

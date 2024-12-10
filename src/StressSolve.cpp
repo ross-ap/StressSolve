@@ -35,7 +35,7 @@ void StressSolve::give_suggestion(Student student) {
 	display.display_suggestion(suggestion);
 }
 
-void StressSolve::test_train_model(int tree_count, int max_depth, int fold_count) {
+float StressSolve::test_train_model(int tree_count, int max_depth, int fold_count) {
 	std::vector<std::vector<float>> X;
 	std::vector<int> y;
 
@@ -45,7 +45,7 @@ void StressSolve::test_train_model(int tree_count, int max_depth, int fold_count
 	}
 
 	RandomForest test_rf(tree_count, max_depth);
-	test_rf.k_fold_cross_validation(fold_count, X, y);
+	return test_rf.k_fold_cross_validation(fold_count, X, y);
 }
 
 void StressSolve::train_model(int tree_count, int max_depth) {

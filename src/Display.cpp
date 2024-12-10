@@ -26,7 +26,7 @@ Student Display::get_student_info() {
 		features.push_back(std::stod(feature));
 	}
 
-	return Student(name, age, features);
+	return Student(features);
 }
 
 void Display::display_stress_level(int stress_level) {

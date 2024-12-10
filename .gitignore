@@ -39,4 +39,5 @@
 StressSolveApp/
 
 # User files
-random_forest.json
+*.json
+*.csv

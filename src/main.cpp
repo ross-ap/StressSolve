@@ -6,7 +6,7 @@
 #include <fstream>
 #include <QtWidgets/QApplication>
 
-int main1(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     StressSolveApp w;
@@ -14,7 +14,7 @@ int main1(int argc, char *argv[])
     return a.exec();
 }
 
-int main() {
+int main1() {
 	//Example dataset
 	std::vector<std::vector<float>> X = {
 	   {2.5, 2.4}, {0.5, 0.7}, {1.3, 1.5}, {1.0, 1.0}, {2.0, 1.5},
@@ -30,7 +30,7 @@ int main() {
 	for (int i = 0; i < X.size(); i++) {
 		std::string name = "Student" + std::to_string(i + 1);
 		int age = rand() % 5 + 15;
-		Student student(name, age, X[i], y[i]);
+		Student student(X[i], y[i]);
 		stress_solve.add_student(student);
 	}
 
@@ -51,7 +51,7 @@ int main() {
 	std::vector<float> new_data = { 0.55, 0.7 };
 
 	// Predict the class for the new data point
-	Student new_student("Student abc", 20, new_data);
+	Student new_student(new_data);
 	stress_solve.predict(new_student);
 	stress_solve.give_suggestion(new_student);
 
