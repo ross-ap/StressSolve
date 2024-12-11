@@ -3,22 +3,33 @@
 using json = nlohmann::json;
 
 class Node {
+private:
+    bool is_leaf;
+    int feature_index;
+    float threshold;
+    int label;
+    Node* left;
+    Node* right;
+
 public:
-    bool is_leaf;      // Decide if the node is a leaf or not
-    int feature_index; // Index of the feature to split on (valid only if not a leaf)
-    float threshold;   // Threshold value for the split (valid only if not a leaf)
-    int label;         // Class label (valid only if a leaf)
-    Node* left;        // Pointer to left child
-    Node* right;       // Pointer to right child
 
     Node(int feature_index, float threshold);
-
     Node(int label);
-
     ~Node();
 
-    json to_json() const;
+	Node* get_left() { return left; }
+	Node* get_right() { return right; }
 
+	void set_left(Node* left) { this->left = left; }
+	void set_right(Node* right) { this->right = right; }
+
+	bool is_leaf_node() { return is_leaf; }
+
+	int get_label() { return label; }
+	int get_feature_index() { return feature_index; }
+	float get_threshold() { return threshold; }
+
+    json to_json() const;
     static Node* from_json(const json& j);
 };
 

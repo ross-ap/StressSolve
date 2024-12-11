@@ -1,39 +1,54 @@
 #include "stdafx.h"
-#include "StressSolve.h"
-#include "RandomForest.h"
-#include "SuggestionMaker.h"
-#include "Student.h"
-#include "Display.h"
-#include "json.hpp"
 
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
+#include "json.hpp"
+
+#include "RandomForest.h"
+#include "StressSolve.h"
+#include "Student.h"
+#include "SuggestionMaker.h"
+
 StressSolve::StressSolve() {
 	rf = new RandomForest();
 	students = std::vector<Student>();
 	suggestion_maker = SuggestionMaker();
-	Display display = Display();
+}
+
+RandomForest* StressSolve::get_rf() {
+	return rf;
 }
 
 void StressSolve::add_student(Student student) {
 	students.push_back(student);
 }
 
-int StressSolve::predict(Student student) {
-	std::vector<float> features = student.get_features();
-	int prediction = rf->predict(features);
-	return prediction;
-	//display.display_stress_level(prediction);
+void StressSolve::load_model(std::string path) {
+	std::ifstream file(path);
+	if (!file.is_open()) {
+		std::cout << "Error: Could not open file " << path << std::endl;
+		return;
+	}
+
+	json j;
+	file >> j;
+	file.close();
+
+	rf->from_json(j);
 }
 
-void StressSolve::give_suggestion(Student student) {
-	std::vector<float> features = student.get_features();
-	int prediction = rf->predict(features);
-	std::string suggestion = suggestion_maker.make_suggestion(prediction, features);
-	display.display_suggestion(suggestion);
+void StressSolve::save_model(std::string path) {
+	std::ofstream file(path);
+	if (!file.is_open()) {
+		std::cout << "Error: Could not open file " << path << std::endl;
+		return;
+	}
+
+	file << rf->to_json().dump(4);
+	file.close();
 }
 
 float StressSolve::test_train_model(int tree_count, int max_depth, int fold_count) {
@@ -62,29 +77,13 @@ void StressSolve::train_model(int tree_count, int max_depth) {
 	rf->fit(X, y);
 }
 
-
-void StressSolve::load_model(std::string path) {
-	std::ifstream file(path);
-	if (!file.is_open()) {
-		std::cout << "Error: Could not open file " << path << std::endl;
-		return;
-	}
-
-	json j;
-	file >> j;
-	file.close();
-
-	rf->from_json(j);
+int StressSolve::predict(Student student) {
+	std::vector<float> features = student.get_features();
+	int prediction = rf->predict(features);
+	return prediction;
 }
 
-void StressSolve::save_model(std::string path) {
-	std::ofstream file(path);
-	if (!file.is_open()) {
-		std::cout << "Error: Could not open file " << path << std::endl;
-		return;
-	}
-
-	file << rf->to_json().dump(4);
-	file.close();
+std::string StressSolve::give_suggestion(Student student) {
+	std::string suggestion = suggestion_maker.make_suggestion(student.get_stress_level(), student.get_features());
+	return suggestion;
 }
-

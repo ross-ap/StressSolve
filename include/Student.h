@@ -4,13 +4,14 @@
 
 class Student {
 public:
-    std::vector<float> features; // e.g., academic performance, sleep hours, etc.
-	int stress_level; // 0 - low, 1 - medium, 2 - high
+    std::vector<float> features;
+	int stress_level;
 
     Student(const std::vector<float>& features, int stress_level = -1);
 
 	std::vector<float> get_features();
-
 	int get_stress_level();
+
+	void set_stress_level(int stress_level);
 };
 

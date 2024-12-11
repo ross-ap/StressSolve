@@ -60,10 +60,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>$(ProjectDir)resources;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)resources;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -108,7 +126,6 @@
   <ItemGroup>
     <ClInclude Include="include\DataHandler.h" />
     <ClInclude Include="include\DecisionTree.h" />
-    <ClInclude Include="include\Display.h" />
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\RandomForest.h" />
     <ClInclude Include="include\stdafx.h" />
@@ -120,7 +137,6 @@
   <ItemGroup>
     <ClCompile Include="src\DataHandler.cpp" />
     <ClCompile Include="src\DecisionTree.cpp" />
-    <ClCompile Include="src\Display.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\RandomForest.cpp" />

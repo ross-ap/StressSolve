@@ -1,18 +1,16 @@
 #include "stdafx.h"
+
 #include "Node.h"
 #include "json.hpp"
 
 using json = nlohmann::json;
 
-// Constructor for internal nodes
 Node::Node(int feature_index, float threshold)
     : feature_index(feature_index), threshold(threshold), label(-1), is_leaf(false), left(nullptr), right(nullptr) {}
 
-// Constructor for leaf nodes
 Node::Node(int label)
     : is_leaf(true), feature_index(-1), threshold(0), label(label), left(nullptr), right(nullptr) {}
 
-// Destructor to clean up child nodes
 Node::~Node() {
     delete left;
     delete right;

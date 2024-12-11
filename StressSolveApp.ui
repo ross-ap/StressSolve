@@ -63,26 +63,28 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabWidgetPage1">
        <attribute name="title">
         <string>Train Model</string>
        </attribute>
-       <widget class="QLabel" name="modelLabelText">
+       <widget class="QLabel" name="modelSettingsLabel">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>20</y>
+          <x>230</x>
+          <y>10</y>
           <width>250</width>
           <height>50</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>18</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Currently Selected Model</string>
+         <string>Model Settings</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -91,14 +93,16 @@
        <widget class="QLabel" name="modelNameLabel">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>80</y>
+          <x>40</x>
+          <y>130</y>
           <width>50</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Name:</string>
@@ -107,14 +111,16 @@
        <widget class="QLabel" name="modelPathLabel">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>120</y>
+          <x>40</x>
+          <y>180</y>
           <width>50</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Path:</string>
@@ -123,9 +129,9 @@
        <widget class="QLabel" name="modelPath">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>120</y>
-          <width>500</width>
+          <x>100</x>
+          <y>180</y>
+          <width>541</width>
           <height>30</height>
          </rect>
         </property>
@@ -147,10 +153,10 @@
        <widget class="QPushButton" name="modelLoadButton">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>40</y>
-          <width>80</width>
-          <height>25</height>
+          <x>310</x>
+          <y>80</y>
+          <width>130</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="text">
@@ -161,9 +167,9 @@
         <property name="geometry">
          <rect>
           <x>500</x>
-          <y>40</y>
-          <width>80</width>
-          <height>25</height>
+          <y>80</y>
+          <width>130</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="text">
@@ -173,9 +179,9 @@
        <widget class="QLabel" name="modelName">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>80</y>
-          <width>500</width>
+          <x>100</x>
+          <y>130</y>
+          <width>541</width>
           <height>30</height>
          </rect>
         </property>
@@ -198,13 +204,15 @@
         <property name="geometry">
          <rect>
           <x>820</x>
-          <y>220</y>
+          <y>70</y>
           <width>50</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Dataset:</string>
@@ -214,7 +222,7 @@
         <property name="geometry">
          <rect>
           <x>880</x>
-          <y>220</y>
+          <y>70</y>
           <width>500</width>
           <height>30</height>
          </rect>
@@ -240,8 +248,8 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>1400</x>
-          <y>220</y>
+          <x>1410</x>
+          <y>70</y>
           <width>100</width>
           <height>30</height>
          </rect>
@@ -254,14 +262,14 @@
         <property name="geometry">
          <rect>
           <x>810</x>
-          <y>260</y>
+          <y>280</y>
           <width>200</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <pointsize>13</pointsize>
          </font>
         </property>
         <property name="text">
@@ -274,15 +282,15 @@
        <widget class="QLabel" name="datasetFeatureCount">
         <property name="geometry">
          <rect>
-          <x>950</x>
-          <y>260</y>
+          <x>960</x>
+          <y>280</y>
           <width>200</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <pointsize>13</pointsize>
          </font>
         </property>
         <property name="text">
@@ -298,17 +306,17 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>820</x>
-          <y>310</y>
-          <width>681</width>
-          <height>501</height>
+          <x>760</x>
+          <y>320</y>
+          <width>780</width>
+          <height>400</height>
          </rect>
         </property>
        </widget>
        <widget class="Line" name="line">
         <property name="geometry">
          <rect>
-          <x>719</x>
+          <x>720</x>
           <y>0</y>
           <width>3</width>
           <height>900</height>
@@ -318,36 +326,40 @@
          <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="datasetSettingsLabel">
         <property name="geometry">
          <rect>
           <x>940</x>
-          <y>20</y>
+          <y>10</y>
           <width>400</width>
-          <height>40</height>
+          <height>50</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>18</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Impute Missing Data</string>
+         <string>Dataset Settings</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="imputeKNNLimitLabel">
         <property name="geometry">
          <rect>
-          <x>960</x>
-          <y>70</y>
-          <width>200</width>
+          <x>880</x>
+          <y>170</y>
+          <width>221</width>
           <height>40</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>13</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Nearest Neighbour Count:</string>
@@ -359,14 +371,16 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>1190</x>
-          <y>70</y>
+          <x>1100</x>
+          <y>170</y>
           <width>80</width>
           <height>40</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -384,31 +398,33 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>1060</x>
-          <y>130</y>
+          <x>1230</x>
+          <y>170</y>
           <width>150</width>
           <height>40</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Impute</string>
+         <string>Impute Missing Data</string>
         </property>
        </widget>
        <widget class="QLabel" name="datasetMissingCount">
         <property name="geometry">
          <rect>
-          <x>1139</x>
-          <y>260</y>
-          <width>371</width>
+          <x>1130</x>
+          <y>280</y>
+          <width>380</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>13</pointsize>
          </font>
         </property>
         <property name="text">
@@ -418,33 +434,22 @@
          <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
-       <widget class="Line" name="line_2">
+       <widget class="QLabel" name="modelTrainingLabel">
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>180</y>
-          <width>861</width>
-          <height>5</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>190</y>
-          <width>200</width>
-          <height>40</height>
+          <x>230</x>
+          <y>280</y>
+          <width>250</width>
+          <height>50</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>18</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Train Model</string>
+         <string>Training Model</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -453,10 +458,10 @@
        <widget class="QPushButton" name="modelCreateNewButton">
         <property name="geometry">
          <rect>
-          <x>259</x>
-          <y>40</y>
-          <width>121</width>
-          <height>25</height>
+          <x>110</x>
+          <y>80</y>
+          <width>130</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="text">
@@ -469,8 +474,8 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>230</y>
+          <x>210</x>
+          <y>350</y>
           <width>60</width>
           <height>40</height>
          </rect>
@@ -478,15 +483,23 @@
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
+        <property name="value">
+         <number>10</number>
+        </property>
        </widget>
        <widget class="QLabel" name="numberOfTreeLabel">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>230</y>
-          <width>111</width>
+          <x>90</x>
+          <y>350</y>
+          <width>110</width>
           <height>40</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Number of Trees: </string>
@@ -495,11 +508,16 @@
        <widget class="QLabel" name="treeMaxDepthLabel">
         <property name="geometry">
          <rect>
-          <x>320</x>
-          <y>230</y>
-          <width>190</width>
+          <x>340</x>
+          <y>350</y>
+          <width>215</width>
           <height>40</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Max Tree Depth (Set 0 for no limit):</string>
@@ -511,8 +529,8 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>520</x>
-          <y>230</y>
+          <x>560</x>
+          <y>350</y>
           <width>60</width>
           <height>40</height>
          </rect>
@@ -527,34 +545,27 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>280</x>
-          <y>450</y>
-          <width>120</width>
-          <height>50</height>
+          <x>410</x>
+          <y>630</y>
+          <width>150</width>
+          <height>70</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
          <string>Train Model</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_3">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>170</y>
-          <width>720</width>
-          <height>3</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
        <widget class="Line" name="line_4">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>170</y>
+          <y>260</y>
           <width>720</width>
           <height>5</height>
          </rect>
@@ -566,14 +577,16 @@
        <widget class="QLabel" name="kFoldAccuracyLabel">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>370</y>
-          <width>340</width>
+          <x>170</x>
+          <y>520</y>
+          <width>250</width>
           <height>60</height>
          </rect>
         </property>
         <property name="font">
-         <font/>
+         <font>
+          <pointsize>15</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>K-Fold Validation Accuracy:</string>
@@ -585,11 +598,17 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>460</x>
-          <y>380</y>
-          <width>120</width>
-          <height>50</height>
+          <x>120</x>
+          <y>630</y>
+          <width>150</width>
+          <height>70</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
          <string>Test Train</string>
@@ -599,10 +618,15 @@
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>310</y>
-          <width>111</width>
+          <y>430</y>
+          <width>110</width>
           <height>40</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Number of k-folds:</string>
@@ -614,8 +638,8 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>310</y>
+          <x>210</x>
+          <y>430</y>
           <width>60</width>
           <height>40</height>
          </rect>
@@ -633,11 +657,16 @@
        <widget class="QLabel" name="percentTrainDataLabel">
         <property name="geometry">
          <rect>
-          <x>320</x>
-          <y>310</y>
-          <width>181</width>
+          <x>400</x>
+          <y>430</y>
+          <width>150</width>
           <height>40</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Percentage of train data:</string>
@@ -649,8 +678,8 @@
         </property>
         <property name="geometry">
          <rect>
-          <x>520</x>
-          <y>310</y>
+          <x>560</x>
+          <y>430</y>
           <width>60</width>
           <height>40</height>
          </rect>
@@ -668,14 +697,120 @@
        <widget class="QLabel" name="kFoldAccuracy">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>380</y>
-          <width>91</width>
-          <height>51</height>
+          <x>430</x>
+          <y>520</y>
+          <width>110</width>
+          <height>60</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>0 %</string>
+         <string>N/A</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="saveDatasetButton">
+        <property name="geometry">
+         <rect>
+          <x>1070</x>
+          <y>740</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Save Dataset</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_9">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>110</y>
+          <width>861</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="imputeDataLabel">
+        <property name="geometry">
+         <rect>
+          <x>1010</x>
+          <y>130</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Impute Missing Data</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_10">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>220</y>
+          <width>861</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="previewDataLabel">
+        <property name="geometry">
+         <rect>
+          <x>1070</x>
+          <y>240</y>
+          <width>130</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Preview Data</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="trainingProgressBar">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>580</y>
+          <width>450</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>0</number>
         </property>
        </widget>
       </widget>
@@ -683,603 +818,1074 @@
        <attribute name="title">
         <string>Predict Input</string>
        </attribute>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="feature01_Label">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>50</y>
-          <width>110</width>
-          <height>30</height>
+          <x>360</x>
+          <y>160</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Anxiety Level:</string>
+         <string>Anxiety Level</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="feature01">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>50</y>
-          <width>65</width>
-          <height>30</height>
+          <x>470</x>
+          <y>160</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>14</string>
-         </property>
-        </item>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
        </widget>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="feature02_Label">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>100</y>
-          <width>110</width>
-          <height>30</height>
+          <x>670</x>
+          <y>160</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Self Esteem</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="feature02">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>100</y>
-          <width>65</width>
-          <height>30</height>
+          <x>760</x>
+          <y>160</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>20</string>
-         </property>
-        </item>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
        </widget>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="feature03_Label">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>150</y>
-          <width>110</width>
-          <height>30</height>
+          <x>940</x>
+          <y>160</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Mental Health History</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_3">
+       <widget class="QComboBox" name="feature03">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>150</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1100</x>
+          <y>160</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </item>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
        </widget>
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="feature04_Label">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>200</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1310</x>
+          <y>160</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Depression</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_4">
+       <widget class="QComboBox" name="feature04">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>200</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1400</x>
+          <y>160</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>11</string>
-         </property>
-        </item>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
        </widget>
-       <widget class="QLabel" name="label_8">
+       <widget class="QLabel" name="feature05_Label">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>50</y>
-          <width>110</width>
-          <height>30</height>
+          <x>380</x>
+          <y>260</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Headache</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_5">
+       <widget class="QComboBox" name="feature05">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>50</y>
-          <width>65</width>
-          <height>30</height>
+          <x>470</x>
+          <y>260</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_9">
+       <widget class="QLabel" name="feature06_Label">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>100</y>
-          <width>110</width>
-          <height>30</height>
+          <x>650</x>
+          <y>260</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Blood Pressure</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_6">
+       <widget class="QComboBox" name="feature06">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>100</y>
-          <width>65</width>
-          <height>30</height>
+          <x>760</x>
+          <y>260</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>1</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_10">
+       <widget class="QLabel" name="feature07_Label">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>150</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1000</x>
+          <y>260</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Sleep Quality</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_7">
+       <widget class="QComboBox" name="feature07">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>150</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1100</x>
+          <y>260</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="feature08_Label">
         <property name="geometry">
          <rect>
-          <x>310</x>
-          <y>200</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1260</x>
+          <y>260</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Breathing Problem</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_8">
+       <widget class="QComboBox" name="feature08">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>200</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1400</x>
+          <y>260</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="feature09_Label">
         <property name="geometry">
          <rect>
-          <x>630</x>
-          <y>50</y>
-          <width>110</width>
-          <height>30</height>
+          <x>370</x>
+          <y>360</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Noise Level</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_9">
+       <widget class="QComboBox" name="feature09">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>50</y>
-          <width>65</width>
-          <height>30</height>
+          <x>470</x>
+          <y>360</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="feature10_Label">
         <property name="geometry">
          <rect>
-          <x>610</x>
-          <y>110</y>
-          <width>110</width>
-          <height>30</height>
+          <x>640</x>
+          <y>360</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Living Condition</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_10">
+       <widget class="QComboBox" name="feature10">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>110</y>
-          <width>65</width>
-          <height>30</height>
+          <x>760</x>
+          <y>360</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_14">
+       <widget class="QLabel" name="feature11_Label">
         <property name="geometry">
          <rect>
-          <x>630</x>
-          <y>160</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1040</x>
+          <y>360</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Safety</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_11">
+       <widget class="QComboBox" name="feature11">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>160</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1100</x>
+          <y>360</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_15">
+       <widget class="QLabel" name="feature12_Label">
         <property name="geometry">
          <rect>
-          <x>630</x>
-          <y>210</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1300</x>
+          <y>360</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Basic Need</string>
+         <string>Basic Needs</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_12">
+       <widget class="QComboBox" name="feature12">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>720</x>
-          <y>210</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1400</x>
+          <y>360</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_16">
+       <widget class="QLabel" name="feature13_Label">
         <property name="geometry">
          <rect>
-          <x>850</x>
-          <y>50</y>
-          <width>110</width>
-          <height>30</height>
+          <x>300</x>
+          <y>460</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Academic Performance</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_13">
+       <widget class="QComboBox" name="feature13">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>980</x>
-          <y>50</y>
-          <width>65</width>
-          <height>30</height>
+          <x>470</x>
+          <y>460</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_17">
+       <widget class="QLabel" name="feature14_Label">
         <property name="geometry">
          <rect>
-          <x>890</x>
-          <y>110</y>
-          <width>110</width>
-          <height>30</height>
+          <x>670</x>
+          <y>460</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Study Load</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_14">
+       <widget class="QComboBox" name="feature14">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>980</x>
-          <y>110</y>
-          <width>65</width>
-          <height>30</height>
+          <x>760</x>
+          <y>460</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_18">
+       <widget class="QLabel" name="feature15_Label">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>160</y>
-          <width>110</width>
-          <height>30</height>
+          <x>890</x>
+          <y>460</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>Student teacher</string>
+         <string>Teacher Student Relationship</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_15">
+       <widget class="QComboBox" name="feature15">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>970</x>
-          <y>160</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1100</x>
+          <y>460</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_19">
+       <widget class="QLabel" name="feature16_Label">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>210</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1230</x>
+          <y>460</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>future career concern</string>
+         <string>Future Career Concerns</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_16">
+       <widget class="QComboBox" name="feature16">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>970</x>
-          <y>210</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1400</x>
+          <y>460</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_20">
+       <widget class="QLabel" name="feature17_Label">
         <property name="geometry">
          <rect>
-          <x>1170</x>
-          <y>40</y>
-          <width>110</width>
-          <height>30</height>
+          <x>350</x>
+          <y>560</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>social support</string>
+         <string>Social Support</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_17">
+       <widget class="QComboBox" name="feature17">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>1260</x>
-          <y>40</y>
-          <width>65</width>
-          <height>30</height>
+          <x>470</x>
+          <y>560</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_21">
+       <widget class="QLabel" name="feature18_Label">
         <property name="geometry">
          <rect>
-          <x>1170</x>
-          <y>100</y>
-          <width>110</width>
-          <height>30</height>
+          <x>660</x>
+          <y>560</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>peer_pressure</string>
+         <string>Peer Pressure</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_18">
+       <widget class="QComboBox" name="feature18">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>1260</x>
-          <y>100</y>
-          <width>65</width>
-          <height>30</height>
+          <x>760</x>
+          <y>560</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_22">
+       <widget class="QLabel" name="feature19_Label">
         <property name="geometry">
          <rect>
-          <x>1170</x>
-          <y>150</y>
-          <width>110</width>
-          <height>30</height>
+          <x>920</x>
+          <y>560</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>activities</string>
+         <string>Extracurricular Activities</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_19">
+       <widget class="QComboBox" name="feature19">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>1260</x>
-          <y>150</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1100</x>
+          <y>560</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_23">
+       <widget class="QLabel" name="feature20_Label">
         <property name="geometry">
          <rect>
-          <x>1160</x>
-          <y>210</y>
-          <width>110</width>
-          <height>30</height>
+          <x>1330</x>
+          <y>560</y>
+          <width>200</width>
+          <height>50</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
         </property>
         <property name="text">
-         <string>bullying</string>
+         <string>Bullying</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_20">
+       <widget class="QComboBox" name="feature20">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>1250</x>
-          <y>210</y>
-          <width>65</width>
-          <height>30</height>
+          <x>1400</x>
+          <y>560</y>
+          <width>60</width>
+          <height>50</height>
          </rect>
         </property>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
        </widget>
-       <widget class="QLabel" name="label_24">
+       <widget class="QLabel" name="stressedOrNotLabel">
         <property name="geometry">
          <rect>
-          <x>510</x>
-          <y>380</y>
-          <width>291</width>
-          <height>111</height>
+          <x>190</x>
+          <y>650</y>
+          <width>800</width>
+          <height>100</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>25</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
-         <string>Stressed or not</string>
+         <string>Are you likely to be stressed or not?</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="predict_output">
+       <widget class="QLabel" name="stressedOrNot">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>380</y>
-          <width>221</width>
-          <height>91</height>
+          <x>190</x>
+          <y>720</y>
+          <width>800</width>
+          <height>100</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
          <string>Click Predict to see your result</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
        </widget>
        <widget class="QPushButton" name="predictButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
-          <x>640</x>
-          <y>500</y>
-          <width>351</width>
-          <height>121</height>
+          <x>1140</x>
+          <y>680</y>
+          <width>300</width>
+          <height>70</height>
          </rect>
         </property>
         <property name="text">
          <string>Predict</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="predictorTabLabel">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>0</y>
+          <width>350</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>StressSolve Predictor</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="predictModelPathLabel">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>60</y>
+          <width>71</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Model:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="predictModelPath">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>60</y>
+          <width>400</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="predictModelChooseButton">
+        <property name="geometry">
+         <rect>
+          <x>980</x>
+          <y>60</y>
+          <width>100</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Choose Model</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="selectNoticeLabel">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>90</y>
+          <width>1300</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Select the value that applies to you for each of the features in the following five categories:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="psychologicalSectionLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>160</y>
+          <width>220</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Psychological Factors</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>130</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="physiologicalSectionLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>260</y>
+          <width>220</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Physiological Factors</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>230</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="environmentalSectionLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>360</y>
+          <width>220</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Environmental Factors</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>330</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="academicSectionLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>460</y>
+          <width>220</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Academic Factors</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>430</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="socialSectionLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>560</y>
+          <width>220</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Social Factors</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>530</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>630</y>
+          <width>1600</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>1140</x>
+          <y>770</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Get Suggestion</string>
+       </attribute>
+       <widget class="QLabel" name="suggestionTitleLabel">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>10</y>
+          <width>280</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Suggestion</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="getSuggestionButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>750</y>
+          <width>200</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Get Suggestion</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="suggestionText">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>70</y>
+          <width>1480</width>
+          <height>660</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="plainText">
+         <string>You haven't inputted your data yet. Go to &quot;Predict Input&quot; tab and fill in your data and click &quot;Predict&quot;. Then come back and click on &quot;Get Suggestion&quot;.</string>
         </property>
        </widget>
       </widget>

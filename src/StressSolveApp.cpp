@@ -1,18 +1,26 @@
 #include "stdafx.h"
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <algorithm>
+
+#include <QFileDialog>
+
 #include "StressSolveApp.h"
-#include <QFileDialog>  // Include QFileDialog
 
 
 QStringList static generate_range(int start, int end) {
 	QStringList range;
+    range.append("-1");
     for (int i = start; i <= end; i++) {
 		range.append(QString::number(i));
     }
     return range;
+}
+
+std::pair<std::string, std::string> rsplit(const std::string& str, char delimiter) {
+    size_t pos = str.rfind(delimiter);
+    return pos != std::string::npos ? std::make_pair(str.substr(0, pos), str.substr(pos + 1)) : std::make_pair(str, "");
 }
 
 StressSolveApp::StressSolveApp(QWidget *parent): QMainWindow(parent) {
@@ -20,34 +28,61 @@ StressSolveApp::StressSolveApp(QWidget *parent): QMainWindow(parent) {
     dataset = new DataHandler();
     stressSolve = new StressSolve();
 
-	ui.comboBox->addItems(generate_range(0, 21));
-	ui.comboBox_2->addItems(generate_range(0, 30));
-	ui.comboBox_3->addItems(generate_range(0, 1));
-	ui.comboBox_4->addItems(generate_range(0, 27));
-	ui.comboBox_5->addItems(generate_range(0, 5));
-	ui.comboBox_6->addItems(generate_range(1, 3));
-	ui.comboBox_7->addItems(generate_range(0, 5));
-	ui.comboBox_8->addItems(generate_range(0, 5));
-	ui.comboBox_9->addItems(generate_range(0, 5));
-	ui.comboBox_10->addItems(generate_range(0, 5));
-	ui.comboBox_11->addItems(generate_range(0, 5));
-	ui.comboBox_12->addItems(generate_range(0, 5));
-	ui.comboBox_13->addItems(generate_range(0, 5));
-	ui.comboBox_14->addItems(generate_range(0, 5));
-	ui.comboBox_15->addItems(generate_range(0, 5));
-	ui.comboBox_16->addItems(generate_range(0, 5));
-	ui.comboBox_17->addItems(generate_range(0, 3));
-	ui.comboBox_18->addItems(generate_range(0, 5));
-	ui.comboBox_19->addItems(generate_range(0, 5));
-	ui.comboBox_20->addItems(generate_range(0, 5));
+	featureComboBoxes.push_back(ui.feature01);
+	featureComboBoxes.push_back(ui.feature02);
+	featureComboBoxes.push_back(ui.feature03);
+	featureComboBoxes.push_back(ui.feature04);
+	featureComboBoxes.push_back(ui.feature05);
+	featureComboBoxes.push_back(ui.feature06);
+	featureComboBoxes.push_back(ui.feature07);
+	featureComboBoxes.push_back(ui.feature08);
+	featureComboBoxes.push_back(ui.feature09);
+	featureComboBoxes.push_back(ui.feature10);
+	featureComboBoxes.push_back(ui.feature11);
+	featureComboBoxes.push_back(ui.feature12);
+	featureComboBoxes.push_back(ui.feature13);
+	featureComboBoxes.push_back(ui.feature14);
+	featureComboBoxes.push_back(ui.feature15);
+	featureComboBoxes.push_back(ui.feature16);
+	featureComboBoxes.push_back(ui.feature17);
+	featureComboBoxes.push_back(ui.feature18);
+	featureComboBoxes.push_back(ui.feature19);
+	featureComboBoxes.push_back(ui.feature20);
+
+	std::map<int, std::vector<int>> featureValues = {
+		{ 0, { 0, 21 } },
+		{ 1, { 0, 30 } },
+		{ 2, { 0, 1 } },
+		{ 3, { 0, 27 } },
+
+		{ 4, { 0, 5 } },
+		{ 5, { 1, 3 } },
+		{ 6, { 0, 5 } },
+		{ 7, { 0, 5 } },
+
+		{ 8, { 0, 5 } },
+		{ 9, { 0, 5 } },
+		{ 10, { 0, 5 } },
+		{ 11, { 0, 5 } },
+
+		{ 12, { 0, 5 } },
+		{ 13, { 0, 5 } },
+		{ 14, { 0, 5 } },
+		{ 15, { 0, 5 } },
+
+		{ 16, { 0, 3 } },
+		{ 17, { 0, 5 } },
+		{ 18, { 0, 5 } },
+		{ 19, { 0, 5 } }
+	};
+
+	for (int i = 0; i < featureComboBoxes.size(); i++) {
+		featureComboBoxes[i]->addItems(generate_range(featureValues[i][0], featureValues[i][1]));
+	}
+
 }
 
 StressSolveApp::~StressSolveApp() {
-}
-
-std::pair<std::string, std::string> rsplit(const std::string& str, char delimiter) {
-    size_t pos = str.rfind(delimiter);
-    return pos != std::string::npos ? std::make_pair(str.substr(0, pos), str.substr(pos + 1)) : std::make_pair(str, "");
 }
 
 void StressSolveApp::on_modelCreateNewButton_clicked() {
@@ -81,8 +116,8 @@ void StressSolveApp::on_modelLoadButton_clicked() {
 
         stressSolve->load_model(selectedFilePath.toStdString());
 
-        ui.treeMaxDepth->setValue(stressSolve->rf->get_n_trees());
-        ui.numberOfTrees->setValue(stressSolve->rf->get_max_depth());
+        ui.treeMaxDepth->setValue(stressSolve->get_rf()->get_n_trees());
+        ui.numberOfTrees->setValue(stressSolve->get_rf()->get_max_depth());
 
         ui.datasetChooseButton->setEnabled(true);
     }
@@ -134,14 +169,83 @@ void StressSolveApp::on_modelTrainButton_clicked() {
 	QMessageBox::information(this, "Model Training", "Model trained with " + QString::number(n_trees) + " trees and max depth " + QString::number(max_depth));
 }
 
-void StressSolveApp::setTrainingWidgetStates(bool state) {
-    ui.treeMaxDepth->setEnabled(state);
-    ui.numberOfTrees->setEnabled(state);
-    ui.numberOfKFold->setEnabled(state);
-    ui.percentTrainData->setEnabled(state);
+void StressSolveApp::on_datasetChooseButton_clicked() {
 
-    ui.modelTestTrainButton->setEnabled(state);
-    ui.modelTrainButton->setEnabled(state);
+    QString fileFullPath = QFileDialog::getOpenFileName(this, "Select Dataset", "", "CSV Files (*.csv)");
+
+    if (!fileFullPath.isEmpty()) {
+        ui.datasetPath->setText(fileFullPath);
+
+        dataset->loadDataset(fileFullPath.toStdString());
+
+        loadTable();
+    }
+}
+
+void StressSolveApp::on_imputeButton_clicked() {
+    dataset->imputeMissingValues(ui.imputeKNNLimit->value());
+    loadTable();
+
+    ui.imputeKNNLimit->setEnabled(false);
+    ui.imputeButton->setEnabled(false);
+    ui.datasetMissingCount->setText("Number of lines with missing features: " + QString::number(dataset->get_numOfLineMissingFeatures()));
+
+    setTrainingWidgetStates(true);
+
+    QMessageBox::information(this, "Data Imputation", "Imputation finished.\nImputed with neighbour count: " + QString::number(ui.imputeKNNLimit->value()));
+}
+
+void StressSolveApp::on_predictModelChooseButton_clicked() {
+    QString fileFullPath = QFileDialog::getOpenFileName(this, "Select Model JSON", "", "JSON Files (*.json)");
+    if (!fileFullPath.isEmpty()) {
+        stressSolve->load_model(fileFullPath.toStdString());
+        QMessageBox::information(this, "Model Loaded", "Model loaded from " + fileFullPath);
+
+        ui.predictButton->setEnabled(true);
+        ui.predictModelPath->setText(fileFullPath);
+
+        for (QComboBox* featureComboBox : featureComboBoxes) {
+            featureComboBox->setCurrentIndex(0);
+            featureComboBox->setEnabled(true);
+        }
+    }
+}
+
+void StressSolveApp::on_predictButton_clicked() {
+    std::vector<float> features;
+
+    for (QComboBox* featureComboBox : featureComboBoxes) {
+        features.push_back(featureComboBox->currentText().toFloat());
+    }
+
+
+    for (float feature : features) {
+        if (feature == -1) {
+            ui.stressedOrNot->setText("Please fill all the features.");
+            return;
+        }
+    }
+
+    currentStudent = new Student(features);
+    int prediction = stressSolve->predict(*currentStudent);
+
+    if (prediction > 0) {
+        ui.stressedOrNot->setText("Yes, you are likely stressed.\nCheck out the suggestion tab for improvement suggestions.");
+    }
+    else {
+        ui.stressedOrNot->setText("No, you are likely not stressed.\nStill check out the suggestion tab for potential improvement suggestions.");
+    }
+
+    currentStudent->set_stress_level(prediction);
+    ui.getSuggestionButton->setEnabled(true);
+
+}
+
+void StressSolveApp::on_getSuggestionButton_clicked() {
+	ui.suggestionText->setPlainText("Getting suggestion...");
+    std::string suggestion = stressSolve->give_suggestion(*currentStudent);
+	ui.suggestionText->setPlainText(QString::fromStdString(suggestion));
+    ui.getSuggestionButton->setEnabled(false);
 }
 
 void StressSolveApp::loadTable() {
@@ -188,59 +292,12 @@ void StressSolveApp::loadTable() {
     }
 }
 
-void StressSolveApp::on_datasetChooseButton_clicked() {
+void StressSolveApp::setTrainingWidgetStates(bool state) {
+    ui.treeMaxDepth->setEnabled(state);
+    ui.numberOfTrees->setEnabled(state);
+    ui.numberOfKFold->setEnabled(state);
+    ui.percentTrainData->setEnabled(state);
 
-    QString fileFullPath = QFileDialog::getOpenFileName(this, "Select Dataset", "", "CSV Files (*.csv)");
-
-    if (!fileFullPath.isEmpty()) {
-        ui.datasetPath->setText(fileFullPath);
-
-        dataset->loadDataset(fileFullPath.toStdString());
-
-        loadTable();
-    }
-}
-
-void StressSolveApp::on_imputeButton_clicked() {
-    dataset->imputeMissingValues(ui.imputeKNNLimit->value());
-    loadTable();
-
-    ui.imputeKNNLimit->setEnabled(false);
-    ui.imputeButton->setEnabled(false);
-    ui.datasetMissingCount->setText("Number of lines with missing features: " + QString::number(dataset->get_numOfLineMissingFeatures()));
-
-    setTrainingWidgetStates(true);
-
-    QMessageBox::information(this, "Data Imputation", "Imputation finished.\nImputed with neighbour count: " + QString::number(ui.imputeKNNLimit->value()));
-}
-
-void StressSolveApp::on_predictButton_clicked() {
-	std::vector<float> features;
-
-    // Till combobox_20
-	features.push_back(ui.comboBox->currentText().toFloat());
-	features.push_back(ui.comboBox_2->currentText().toFloat());
-	features.push_back(ui.comboBox_3->currentText().toFloat());
-	features.push_back(ui.comboBox_4->currentText().toFloat());
-	features.push_back(ui.comboBox_5->currentText().toFloat());
-	features.push_back(ui.comboBox_6->currentText().toFloat());
-	features.push_back(ui.comboBox_7->currentText().toFloat());
-	features.push_back(ui.comboBox_8->currentText().toFloat());
-	features.push_back(ui.comboBox_9->currentText().toFloat());
-	features.push_back(ui.comboBox_10->currentText().toFloat());
-	features.push_back(ui.comboBox_11->currentText().toFloat());
-	features.push_back(ui.comboBox_12->currentText().toFloat());
-	features.push_back(ui.comboBox_13->currentText().toFloat());
-	features.push_back(ui.comboBox_14->currentText().toFloat());
-	features.push_back(ui.comboBox_15->currentText().toFloat());
-	features.push_back(ui.comboBox_16->currentText().toFloat());
-	features.push_back(ui.comboBox_17->currentText().toFloat());
-	features.push_back(ui.comboBox_18->currentText().toFloat());
-	features.push_back(ui.comboBox_19->currentText().toFloat());
-	features.push_back(ui.comboBox_20->currentText().toFloat());
-
-	Student student(features);
-	int prediction = stressSolve->predict(student);
-	ui.predict_output->setText(QString::number(prediction));
-
+    ui.modelTestTrainButton->setEnabled(state);
+    ui.modelTrainButton->setEnabled(state);
 }

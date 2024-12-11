@@ -1,13 +1,10 @@
 #include "stdafx.h"
-#include "DataHandler.h"
-#include <limits>
-#include <fstream>
 #include <algorithm>
+#include <fstream>
+#include <limits>
 #include <sstream>
 
-DataHandler::DataHandler() {
-	numOfLineMissingFeatures = 0;
-}
+#include "DataHandler.h"
 
 void DataHandler::reset() {
 	numOfLineMissingFeatures = 0;
@@ -16,78 +13,13 @@ void DataHandler::reset() {
 	feature_headers.clear();
 }
 
-void DataHandler::loadDataset(std::string path) {
-
-	reset();
-
-	std::ifstream in(path);
-	std::string line;
-
-	std::getline(in, line);
-	std::istringstream ss(line);
-	std::string token;
-	int numOfFeatures = 0;
-
-	while (std::getline(ss, token, ',')) {
-		numOfFeatures++;
-		feature_headers.push_back(token);
+float DataHandler::euclideanDistance(const std::vector<float>& v1, const std::vector<float>& v2, std::vector<bool>& missing) {
+	float sum = 0.0;
+	for (int i = 0; i < v1.size(); i++) {
+		if (missing[i]) continue;
+		sum += pow(v1[i] - v2[i], 2);
 	}
-	
-	while (std::getline(in, line)) {
-		std::vector<float> feature;
-		std::string token;
-		std::istringstream ss(line);
-
-		bool missingFeature = false;
-		while (std::getline(ss, token, ',')) {
-			if (token == "") {
-				missingFeature = true;
-				feature.push_back(NAN);
-			}
-			else {
-				feature.push_back(std::stof(token));
-			}
-		}
-
-		if (feature.size() != numOfFeatures) continue;
-
-		if (missingFeature) numOfLineMissingFeatures++;
-
-		features.push_back(feature);
-	}
-
-	std::shuffle(features.begin(), features.end(), std::mt19937{ std::random_device{}() });
-	for (int i = 0; i < features.size(); i++) {
-		labels.push_back(features[i].back());
-		features[i].pop_back();
-	}
-}
-
-int DataHandler::get_numOfLineMissingFeatures() {
-	return numOfLineMissingFeatures;
-}
-
-std::vector<std::vector<float>> DataHandler::get_features() {
-	return features;
-}
-
-std::vector<std::string> DataHandler::get_feature_headers() {
-	return feature_headers;
-}
-
-std::vector<int> DataHandler::get_labels() {
-	return labels;
-}
-
-void DataHandler::imputeMissingValues(int neighbour_count) {
-	std::vector<float> minVals;
-	std::vector<float> maxVals;
-
-	calculateMinMax(features, minVals, maxVals);
-	normalizeDataset(features, minVals, maxVals);
-	knnImpute(neighbour_count);
-	denormalizeDataset(features, minVals, maxVals);
-
+	return sqrt(sum);
 }
 
 void DataHandler::calculateMinMax(const std::vector<std::vector<float>>& data, std::vector<float>& minVals, std::vector<float>& maxVals) {
@@ -115,15 +47,6 @@ void DataHandler::normalizeDataset(std::vector<std::vector<float>>& data, const 
 			data[i][j] = (data[i][j] - minVals[j]) / (maxVals[j] - minVals[j]);
 		}
 	}
-}
-
-float DataHandler::euclideanDistance(const std::vector<float>& v1, const std::vector<float>& v2, std::vector<bool>& missing) {
-	float sum = 0.0;
-	for (int i = 0; i < v1.size(); i++) {
-		if (missing[i]) continue;
-		sum += pow(v1[i] - v2[i], 2);
-	}
-	return sqrt(sum);
 }
 
 void DataHandler::knnImpute(int k) {
@@ -168,4 +91,82 @@ void DataHandler::denormalizeDataset(std::vector<std::vector<float>>& data, cons
 			data[i][j] = std::ceil(data[i][j] * (maxVals[j] - minVals[j]) + minVals[j]);
 		}
 	}
+}
+
+DataHandler::DataHandler() {
+	numOfLineMissingFeatures = 0;
+}
+
+int DataHandler::get_numOfLineMissingFeatures() {
+	return numOfLineMissingFeatures;
+}
+
+std::vector<std::vector<float>> DataHandler::get_features() {
+	return features;
+}
+
+std::vector<int> DataHandler::get_labels() {
+	return labels;
+}
+
+std::vector<std::string> DataHandler::get_feature_headers() {
+	return feature_headers;
+}
+
+void DataHandler::loadDataset(std::string path) {
+
+	reset();
+
+	std::ifstream in(path);
+	std::string line;
+
+	std::getline(in, line);
+	std::istringstream ss(line);
+	std::string token;
+	int numOfFeatures = 0;
+
+	while (std::getline(ss, token, ',')) {
+		numOfFeatures++;
+		feature_headers.push_back(token);
+	}
+
+	while (std::getline(in, line)) {
+		std::vector<float> feature;
+		std::string token;
+		std::istringstream ss(line);
+
+		bool missingFeature = false;
+		while (std::getline(ss, token, ',')) {
+			if (token == "") {
+				missingFeature = true;
+				feature.push_back(NAN);
+			}
+			else {
+				feature.push_back(std::stof(token));
+			}
+		}
+
+		if (feature.size() != numOfFeatures) continue;
+
+		if (missingFeature) numOfLineMissingFeatures++;
+
+		features.push_back(feature);
+	}
+
+	std::shuffle(features.begin(), features.end(), std::mt19937{ std::random_device{}() });
+	for (int i = 0; i < features.size(); i++) {
+		labels.push_back(features[i].back());
+		features[i].pop_back();
+	}
+}
+
+void DataHandler::imputeMissingValues(int neighbour_count) {
+	std::vector<float> minVals;
+	std::vector<float> maxVals;
+
+	calculateMinMax(features, minVals, maxVals);
+	normalizeDataset(features, minVals, maxVals);
+	knnImpute(neighbour_count);
+	denormalizeDataset(features, minVals, maxVals);
+
 }

@@ -1,11 +1,45 @@
 #include "stdafx.h"
-#include "RandomForest.h"
 
 #include <iostream>
-#include <vector>
 #include <numeric>
 #include <random>
 #include <unordered_map>
+#include <vector>
+
+#include "RandomForest.h"
+
+
+std::pair<std::vector<std::vector<float>>, std::vector<int>> RandomForest::bootstrap(const std::vector<std::vector<float>>& X, const std::vector<int>& y) {
+    std::vector<std::vector<float>> bootstrapped_X;
+    std::vector<int> bootstrapped_y;
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(0, X.size() - 1);
+
+    for (int i = 0; i < X.size(); ++i) {
+        int index = distribution(generator);
+        bootstrapped_X.push_back(X[index]);
+        bootstrapped_y.push_back(y[index]);
+    }
+    return { bootstrapped_X, bootstrapped_y };
+}
+
+int RandomForest::majority_vote(const std::vector<int>& predictions) {
+    std::unordered_map<int, int> count;
+    for (int pred : predictions) {
+        count[pred]++;
+    }
+    auto maxElementIt = std::max_element(count.begin(), count.end(), [](const auto& a, const auto& b) {
+        return a.second < b.second;
+        });
+
+    if (maxElementIt != count.end()) {
+        return maxElementIt->first;  // Safe to dereference
+    }
+    else {
+        // Handle the case when count is empty, e.g., return a default value or throw an exception
+        throw std::runtime_error("Count is empty");
+    }
+}
 
 RandomForest::RandomForest() {
 	n_trees = 0;
@@ -14,7 +48,6 @@ RandomForest::RandomForest() {
 
 RandomForest::RandomForest(int n_trees, int max_depth)
     : n_trees(n_trees), max_depth(max_depth) {
-    // Initialize the trees
     for (int i = 0; i < n_trees; ++i) {
         trees.emplace_back(max_depth);
     }
@@ -48,37 +81,30 @@ float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<st
     int fold_size = n / fold_count;
     float total_accuracy = 0.0f;
 
-    // Shuffle the dataset to ensure random distribution
     std::vector<int> indices(n);
-    std::iota(indices.begin(), indices.end(), 0); // Fill indices with 0, 1, ..., n-1
+    std::iota(indices.begin(), indices.end(), 0);
     std::shuffle(indices.begin(), indices.end(), std::mt19937{ std::random_device{}() });
 
     for (int i = 0; i < fold_count; ++i) {
-        // Determine the indices for the validation fold
         int start = i * fold_size;
-        int end = (i == fold_count - 1) ? n : start + fold_size; // Last fold might take the remainder
+        int end = (i == fold_count - 1) ? n : start + fold_size;
 
-        // Create training and validation sets
         std::vector<std::vector<float>> train_features, test_features;
         std::vector<int> train_labels, test_labels;
 
         for (int j = 0; j < n; ++j) {
             if (j >= start && j < end) {
-                // Validation data
                 test_features.push_back(features[indices[j]]);
                 test_labels.push_back(labels[indices[j]]);
             }
             else {
-                // Training data
                 train_features.push_back(features[indices[j]]);
                 train_labels.push_back(labels[indices[j]]);
             }
         }
 
-        // Fit the random forest on the training data
         this->fit(train_features, train_labels);
 
-        // Evaluate on the test data
         int correct_predictions = 0;
         for (int j = 0; j < test_features.size(); ++j) {
             if (this->predict(test_features[j]) == test_labels[j]) {
@@ -91,47 +117,7 @@ float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<st
         qDebug() << "Fold " << (i + 1) << " Accuracy: " << accuracy;
     }
 
-    return total_accuracy / fold_count; // Average accuracy across folds
-}
-
-void RandomForest::print_forest_structure() {
-    for (int i = 0; i < trees.size(); ++i) {
-        std::cout << "Tree " << i + 1 << ":" << std::endl;
-        trees[i].print_tree_structure();
-        std::cout << std::endl;
-    }
-}
-
-std::pair<std::vector<std::vector<float>>, std::vector<int>> RandomForest::bootstrap(const std::vector<std::vector<float>>& X, const std::vector<int>& y) {
-    std::vector<std::vector<float>> bootstrapped_X;
-    std::vector<int> bootstrapped_y;
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(0, X.size() - 1);
-
-    for (int i = 0; i < X.size(); ++i) {
-        int index = distribution(generator);
-        bootstrapped_X.push_back(X[index]);
-        bootstrapped_y.push_back(y[index]);
-    }
-    return { bootstrapped_X, bootstrapped_y };
-}
-
-int RandomForest::majority_vote(const std::vector<int>& predictions) {
-    std::unordered_map<int, int> count;
-    for (int pred : predictions) {
-        count[pred]++;
-    }
-    auto maxElementIt = std::max_element(count.begin(), count.end(), [](const auto& a, const auto& b) {
-        return a.second < b.second;
-        });
-
-    if (maxElementIt != count.end()) {
-        return maxElementIt->first;  // Safe to dereference
-    }
-    else {
-        // Handle the case when count is empty, e.g., return a default value or throw an exception
-        throw std::runtime_error("Count is empty");
-    }
+    return total_accuracy / fold_count;
 }
 
 json RandomForest::to_json() const {
