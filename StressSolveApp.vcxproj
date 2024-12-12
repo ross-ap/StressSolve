@@ -60,14 +60,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>$(ProjectDir);$(ProjectDir)resources;$(ProjectDir)include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\vcpkg\installed\x64-windows\include;$(ProjectDir);$(ProjectDir)resources;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\vcpkg\installed\x64-windows\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnableManifest>false</VcpkgEnableManifest>
-    <VcpkgEnabled>true</VcpkgEnabled>
+    <VcpkgEnabled>false</VcpkgEnabled>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <VcpkgUseStatic>true</VcpkgUseStatic>
@@ -75,12 +75,16 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link />
     <Link>
       <AdditionalDependencies>libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -121,7 +125,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtUic Include="StressSolveApp.ui" />
+    <QtUic Include="include\StressSolveApp.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\DataHandler.h" />

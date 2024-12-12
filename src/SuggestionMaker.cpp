@@ -2,7 +2,6 @@
 #include "SuggestionMaker.h"
 
 #include <fstream>
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -76,12 +75,13 @@ std::string SuggestionMaker::make_suggestion(int stress_level, std::vector<float
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_str.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
 
         CURLcode res = curl_easy_perform(curl);
 		try {
 			nlohmann::json json_response = nlohmann::json::parse(response_data);
-			qDebug() << json_response.dump();
 			suggestionMessage = json_response["choices"][0]["text"];
 		}
 		catch (nlohmann::json::exception& e) {

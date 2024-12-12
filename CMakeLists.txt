@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(CMakeTestApp VERSION 1.0.0 LANGUAGES CXX)
+project(StressSolveApp VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -35,14 +35,20 @@ set(SRC_FILES
     src/main.cpp
 )
 
-qt_add_executable(CMakeTestApp WIN32 ${SRC_FILES}) 
+qt_add_executable(StressSolveApp ${SRC_FILES}) 
 
 file(GLOB RESOURCE_FILES "resources/*.qrc")
 set(CMAKE_MACRO_RESOURCE ${RESOURCE_FILES})
-qt_add_resources(CMakeTestApp ${CMAKE_MACRO_RESOURCE}) 
+qt_add_resources(StressSolveApp ${CMAKE_MACRO_RESOURCE}) 
 
-target_link_libraries(CMakeTestApp PRIVATE Qt6::Widgets Qt6::Core CURL::libcurl)
-set_target_properties(CMakeTestApp PROPERTIES
+target_link_libraries(StressSolveApp PRIVATE Qt6::Widgets Qt6::Core CURL::libcurl)
+set_target_properties(StressSolveApp PROPERTIES
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
+)
+
+add_custom_command(TARGET StressSolveApp POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_SOURCE_DIR}/bearer_token.txt
+        ${CMAKE_BINARY_DIR}/Debug/bearer_token.txt
 )

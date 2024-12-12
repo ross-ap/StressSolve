@@ -23,7 +23,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="StressSolveApp.ui">
+    <QtUic Include="include\StressSolveApp.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

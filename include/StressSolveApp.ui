@@ -1906,7 +1906,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="resources/StressSolveApp.qrc"/>
+  <include location="../resources/StressSolveApp.qrc"/>
  </resources>
  <connections/>
 </ui>
