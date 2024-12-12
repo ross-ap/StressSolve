@@ -37,6 +37,7 @@
 
 # Compiled files
 StressSolveApp/
+build/
 
 # User files
 *.json
