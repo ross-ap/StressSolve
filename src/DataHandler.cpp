@@ -31,7 +31,7 @@ void DataHandler::calculateMinMax(const std::vector<std::vector<float>>& data, s
 
 	for (int i = 1; i < data.size(); i++) {
 		for (int j = 0; j < data[i].size(); j++) {
-			if (isnan(data[i][j])) continue;
+			if (std::isnan(data[i][j])) continue;
 
 			minVals[j] = std::min(minVals[j], data[i][j]);
 			maxVals[j] = std::max(maxVals[j], data[i][j]);
@@ -42,7 +42,7 @@ void DataHandler::calculateMinMax(const std::vector<std::vector<float>>& data, s
 void DataHandler::normalizeDataset(std::vector<std::vector<float>>& data, const std::vector<float>& minVals, const std::vector<float>& maxVals) {
 	for (int i = 0; i < data.size(); i++) {
 		for (int j = 0; j < data[i].size(); j++) {
-			if (isnan(data[i][j])) continue;
+			if (std::isnan(data[i][j])) continue;
 
 			data[i][j] = (data[i][j] - minVals[j]) / (maxVals[j] - minVals[j]);
 		}
@@ -54,7 +54,7 @@ void DataHandler::knnImpute(int k) {
 	for (int i = 0; i < features.size(); i++) {
 		bool nan_value_found = false;
 		for (int j = 0; j < features[i].size(); j++) {
-			if (isnan(features[i][j])) {
+			if (std::isnan(features[i][j])) {
 
 				nan_value_found = true;
 				std::vector<bool> missing(features[i].size(), false);
@@ -62,7 +62,7 @@ void DataHandler::knnImpute(int k) {
 
 				std::vector<std::pair<float, int>> distances;
 				for (int m = 0; m < features.size(); m++) {
-					if (i == m || isnan(features[m][j])) continue;
+					if (i == m || std::isnan(features[m][j])) continue;
 					float dist = euclideanDistance(features[i], features[m], missing);
 					distances.push_back({ dist, m });
 				}
