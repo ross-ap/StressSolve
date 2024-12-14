@@ -15,6 +15,7 @@ private slots:
     void on_modelSaveButton_clicked();
     void on_modelTestTrainButton_clicked();
     void on_modelTrainButton_clicked();
+    void on_modelFineTuneButton_clicked();
 
     void on_datasetChooseButton_clicked();
     void on_imputeButton_clicked();
@@ -32,6 +33,7 @@ private:
 	std::vector<QComboBox*> featureComboBoxes;
     Student* currentStudent;
 
+    void reset();
     void loadTable();
     void setTrainingWidgetStates(bool state);
 

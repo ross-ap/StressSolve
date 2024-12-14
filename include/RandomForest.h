@@ -22,6 +22,7 @@ public:
     int get_max_depth();
 
     void fit(const std::vector<std::vector<float>>& features, const std::vector<int>& labels);
+	void update(const std::vector<std::vector<float>>& features, const std::vector<int>& labels);
     int predict(const std::vector<float>& x);
 
     float k_fold_cross_validation(int fold_count, const std::vector<std::vector<float>>& features, const std::vector<int>& labels);

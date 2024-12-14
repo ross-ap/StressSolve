@@ -10,6 +10,7 @@ private:
     int max_depth;
 
     Node* build_tree(const std::vector<std::vector<float>>& features, const std::vector<int>& labels, int depth);
+	void update_tree(Node* node, const std::vector<std::vector<float>>& features, const std::vector<int>& labels);
     Node* create_leaf(const std::vector<int>& labels);
 
     bool is_pure(const std::vector<int>& labels);
@@ -27,6 +28,7 @@ public:
     DecisionTree(int max_depth = -1);
 
     void fit(const std::vector<std::vector<float>>& features, const std::vector<int>& labels);
+	void update(const std::vector<std::vector<float>>& features, const std::vector<int>& labels);
     int predict(const std::vector<float>& features);
 
     json to_json() const;

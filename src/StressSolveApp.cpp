@@ -91,6 +91,8 @@ void StressSolveApp::on_modelCreateNewButton_clicked() {
 
     if (!fileFullPath.isEmpty()) {
 
+        stressSolve = new StressSolve();
+
         QMessageBox::information(this, "Saved", "Saved as " + fileFullPath);
 
         selectedFilePath = fileFullPath;
@@ -116,8 +118,8 @@ void StressSolveApp::on_modelLoadButton_clicked() {
 
         stressSolve->load_model(selectedFilePath.toStdString());
 
-        ui.treeMaxDepth->setValue(stressSolve->get_rf()->get_n_trees());
-        ui.numberOfTrees->setValue(stressSolve->get_rf()->get_max_depth());
+        ui.treeMaxDepth->setValue(stressSolve->get_rf()->get_max_depth());
+        ui.numberOfTrees->setValue(stressSolve->get_rf()->get_n_trees());
 
         ui.datasetChooseButton->setEnabled(true);
     }
@@ -165,8 +167,46 @@ void StressSolveApp::on_modelTrainButton_clicked() {
     int n_trees = ui.numberOfTrees->value();
     int max_depth = ui.treeMaxDepth->value();
 
-	stressSolve->train_model(n_trees, max_depth);
-	QMessageBox::information(this, "Model Training", "Model trained with " + QString::number(n_trees) + " trees and max depth " + QString::number(max_depth));
+    stressSolve->train_model(n_trees, max_depth);
+
+	int prediction_correct = 0;
+	for (int i = n_train; i < n; i++) {
+		Student student(dataset->get_features()[i]);
+		int prediction = stressSolve->predict(student);
+		if (prediction == dataset->get_labels()[i]) {
+			prediction_correct++;
+		}
+	}
+
+	float accuracy_percent = (float)prediction_correct * 100 / (n - n_train);
+    QMessageBox::information(this, "Model Training", "Model trained with " + QString::number(n_trees) + " trees and max depth " + QString::number(max_depth) + "\nAccuracy Percent: " + QString::number(accuracy_percent) + "%");
+}
+
+void StressSolveApp::on_modelFineTuneButton_clicked() {
+    int percentTrainData = ui.percentTrainData->value();
+
+    int n = dataset->get_labels().size();
+    int n_train = n * percentTrainData / 100;
+
+    std::vector<Student> students;
+    for (int i = 0; i < n_train; i++) {
+        Student student(dataset->get_features()[i], dataset->get_labels()[i]);
+        stressSolve->add_student(student);
+    }
+
+    stressSolve->update_model();
+
+    int prediction_correct = 0;
+    for (int i = n_train; i < n; i++) {
+        Student student(dataset->get_features()[i]);
+        int prediction = stressSolve->predict(student);
+        if (prediction == dataset->get_labels()[i]) {
+            prediction_correct++;
+        }
+    }
+
+    float accuracy_percent = (float)prediction_correct * 100 / (n - n_train);
+    QMessageBox::information(this, "Model Training", "Model retrained with new dataset.\nAccuracy Percent: " + QString::number(accuracy_percent) + "%");
 }
 
 void StressSolveApp::on_datasetChooseButton_clicked() {
@@ -245,14 +285,27 @@ void StressSolveApp::on_getSuggestionButton_clicked() {
 	ui.suggestionText->setPlainText("Getting suggestion...");
     std::string suggestion = stressSolve->give_suggestion(*currentStudent);
 	ui.suggestionText->setPlainText(QString::fromStdString(suggestion));
-    ui.getSuggestionButton->setEnabled(false);
+	if (suggestion.find("Something went wrong") != std::string::npos) {
+		ui.getSuggestionButton->setEnabled(true);
+	}
+    else {
+        ui.getSuggestionButton->setEnabled(false);
+    }
 }
 
-void StressSolveApp::loadTable() {
+void StressSolveApp::reset() {
     ui.datasetTable->clear();
     ui.datasetTable->setRowCount(0);
     ui.datasetTable->setColumnCount(0);
 
+	ui.datasetFeatureCount->setText("Features: 0");
+	ui.datasetLineCount->setText("Lines: 0");
+	ui.datasetMissingCount->setText("Number of lines with missing features: 0");
+}
+
+void StressSolveApp::loadTable() {
+
+	reset();
     std::vector<std::vector<float>> features = dataset->get_features();
     std::vector<int> labels = dataset->get_labels();
 
@@ -289,6 +342,9 @@ void StressSolveApp::loadTable() {
     }
     else {
         setTrainingWidgetStates(true);
+		if (stressSolve->get_rf()->get_n_trees() == 0) {
+			ui.modelFineTuneButton->setEnabled(false);
+		}
     }
 }
 
@@ -300,4 +356,5 @@ void StressSolveApp::setTrainingWidgetStates(bool state) {
 
     ui.modelTestTrainButton->setEnabled(state);
     ui.modelTrainButton->setEnabled(state);
+	ui.modelFineTuneButton->setEnabled(state);
 }

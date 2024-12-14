@@ -26,8 +26,11 @@ public:
 	bool is_leaf_node() { return is_leaf; }
 
 	int get_label() { return label; }
+	void set_label(int label) { this->label = label; }
 	int get_feature_index() { return feature_index; }
+	void set_feature_index(int feature_index) { this->feature_index = feature_index; }
 	float get_threshold() { return threshold; }
+	void set_threshold(float threshold) { this->threshold = threshold; }
 
     json to_json() const;
     static Node* from_json(const json& j);

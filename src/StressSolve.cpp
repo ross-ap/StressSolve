@@ -77,6 +77,18 @@ void StressSolve::train_model(int tree_count, int max_depth) {
 	rf->fit(X, y);
 }
 
+void StressSolve::update_model() {
+	std::vector<std::vector<float>> X;
+	std::vector<int> y;
+
+	for (Student student : students) {
+		X.push_back(student.get_features());
+		y.push_back(student.get_stress_level());
+	}
+
+	rf->update(X, y);
+}
+
 int StressSolve::predict(Student student) {
 	std::vector<float> features = student.get_features();
 	int prediction = rf->predict(features);

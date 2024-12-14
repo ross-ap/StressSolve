@@ -12,7 +12,7 @@
 std::pair<std::vector<std::vector<float>>, std::vector<int>> RandomForest::bootstrap(const std::vector<std::vector<float>>& X, const std::vector<int>& y) {
     std::vector<std::vector<float>> bootstrapped_X;
     std::vector<int> bootstrapped_y;
-    std::default_random_engine generator;
+	std::mt19937 generator(std::random_device{}());
     std::uniform_int_distribution<int> distribution(0, X.size() - 1);
 
     for (int i = 0; i < X.size(); ++i) {
@@ -33,10 +33,9 @@ int RandomForest::majority_vote(const std::vector<int>& predictions) {
         });
 
     if (maxElementIt != count.end()) {
-        return maxElementIt->first;  // Safe to dereference
+        return maxElementIt->first;
     }
     else {
-        // Handle the case when count is empty, e.g., return a default value or throw an exception
         throw std::runtime_error("Count is empty");
     }
 }
@@ -66,6 +65,13 @@ void RandomForest::fit(const std::vector<std::vector<float>>& features, const st
         auto [bootstrapped_X, bootstrapped_y] = bootstrap(features, labels);
         tree.fit(bootstrapped_X, bootstrapped_y);
     }
+}
+
+void RandomForest::update(const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
+	for (auto& tree : trees) {
+		auto [bootstrapped_X, bootstrapped_y] = bootstrap(features, labels);
+		tree.update(bootstrapped_X, bootstrapped_y);
+	}
 }
 
 int RandomForest::predict(const std::vector<float>& x) {

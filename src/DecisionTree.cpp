@@ -29,6 +29,33 @@ Node* DecisionTree::build_tree(const std::vector<std::vector<float>>& features, 
     return node;
 }
 
+void DecisionTree::update_tree(Node* node, const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
+    if (!node) return;
+
+    if (node->is_leaf_node()) {
+        int updated_label = create_leaf(labels)->get_label();
+        node->set_label(updated_label);
+        return;
+    }
+
+    int best_feature;
+    float best_threshold;
+    if (find_best_split(features, labels, best_feature, best_threshold)) {
+        node->set_feature_index(best_feature);
+        node->set_threshold(best_threshold);
+
+        auto [left_features, left_labels, right_features, right_labels] = split_data(features, labels, best_feature, best_threshold);
+
+        if (!left_labels.empty() && !right_labels.empty()) {
+            if (!node->get_left()) node->set_left(new Node(-1));
+            if (!node->get_right()) node->set_right(new Node(-1));
+
+            update_tree(node->get_left(), left_features, left_labels);
+            update_tree(node->get_right(), right_features, right_labels);
+        }
+    }
+}
+
 Node* DecisionTree::create_leaf(const std::vector<int>& labels) {
     std::map<int, int> counts;
     for (int label : labels) counts[label]++;
@@ -117,6 +144,10 @@ DecisionTree::DecisionTree(int max_depth)
 
 void DecisionTree::fit(const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
     root = build_tree(features, labels, 0);
+}
+
+void DecisionTree::update(const std::vector<std::vector<float>>& features, const std::vector<int>& labels) {
+    update_tree(root, features, labels);
 }
 
 int DecisionTree::predict(const std::vector<float>& features) {
