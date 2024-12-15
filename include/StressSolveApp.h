@@ -23,6 +23,7 @@ private slots:
 	void on_predictModelChooseButton_clicked();
     void on_predictButton_clicked();
 
+    void on_bearerTokenPathChooseButton_clicked();
     void on_getSuggestionButton_clicked();
 
 private:

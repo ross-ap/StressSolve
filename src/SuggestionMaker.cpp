@@ -7,26 +7,29 @@
 #include <curl/curl.h>
 #include <json.hpp>
 
-#include <QtWidgets>
-
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 }
 
-std::string SuggestionMaker::make_suggestion(int stress_level, std::vector<float> features) {
+std::string SuggestionMaker::make_suggestion(int stress_level, std::vector<float> features, std::string bearer_token_path) {
+	if (stress_level < 0 || stress_level > 2) {
+		throw std::invalid_argument("stress_level must be between 0 and 2");
+	}
     std::string suggestionMessage = "Something went wrong. Please try again.";
 
-	std::ifstream file("bearer_token.txt");
+	std::ifstream file(bearer_token_path);
 	if (!file.is_open()) {
-		return "Error: Could not open file bearer_token.txt.\nPlease make sure the file exists and contains the bearer token.";
+		return "Error: Could not open file " + bearer_token_path + " or it is empty.\nPlease make sure the file exists and contains the bearer token.";
 	}
 
 	std::string bearer_token;
 	file >> bearer_token;
 	file.close();
 
-	qDebug() << "Bearer token: " << QString::fromStdString(bearer_token);
+	if (bearer_token.empty()) {
+		return "Error: Could not open file " + bearer_token_path + " or it is empty.\nPlease make sure the file exists and contains the bearer token.";
+	}
 
 	std::vector<std::string> featureNames = {
 		"anxiety_level","self_esteem","mental_health_history","depression",

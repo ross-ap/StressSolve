@@ -29,6 +29,6 @@ public:
 	void update_model();
 
 	int predict(Student student);
-	std::string give_suggestion(Student student);
+	std::string give_suggestion(Student student, std::string bearer_token_path);
 };
 

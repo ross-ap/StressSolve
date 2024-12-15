@@ -63,7 +63,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabWidgetPage1">
        <attribute name="title">
@@ -1849,7 +1849,7 @@
        <widget class="QLabel" name="suggestionTitleLabel">
         <property name="geometry">
          <rect>
-          <x>640</x>
+          <x>60</x>
           <y>10</y>
           <width>280</width>
           <height>60</height>
@@ -1908,6 +1908,64 @@
         </property>
         <property name="plainText">
          <string>You haven't inputted your data yet. Go to &quot;Predict Input&quot; tab and fill in your data and click &quot;Predict&quot;. Then come back and click on &quot;Get Suggestion&quot;.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="bearerTokenPathLabel">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>10</y>
+          <width>891</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="bearerTokenLabel">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>10</y>
+          <width>150</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Bearer Token Path:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="bearerTokenPathChooseButton">
+        <property name="geometry">
+         <rect>
+          <x>1390</x>
+          <y>10</y>
+          <width>140</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Choose Path</string>
         </property>
        </widget>
       </widget>

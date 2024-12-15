@@ -1,9 +1,9 @@
 #include <algorithm>
 #include <fstream>
 #include <limits>
+#include <random>
 #include <sstream>
 
-#include <QtWidgets>
 #include "DataHandler.h"
 
 void DataHandler::reset() {

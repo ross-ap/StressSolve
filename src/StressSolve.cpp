@@ -93,7 +93,7 @@ int StressSolve::predict(Student student) {
 	return prediction;
 }
 
-std::string StressSolve::give_suggestion(Student student) {
-	std::string suggestion = suggestion_maker.make_suggestion(student.get_stress_level(), student.get_features());
+std::string StressSolve::give_suggestion(Student student, std::string bearer_token_path) {
+	std::string suggestion = suggestion_maker.make_suggestion(student.get_stress_level(), student.get_features(), bearer_token_path);
 	return suggestion;
 }

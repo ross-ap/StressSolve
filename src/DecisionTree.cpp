@@ -57,6 +57,11 @@ void DecisionTree::update_tree(Node* node, const std::vector<std::vector<float>>
 Node* DecisionTree::create_leaf(const std::vector<int>& labels) {
     std::map<int, int> counts;
     for (int label : labels) counts[label]++;
+
+    if (counts.size() == 0) {
+        throw std::runtime_error("Tree structure error: No labels in create_leaf.");
+    }
+
     int majority_label = std::max_element(counts.begin(), counts.end(),
         [](const auto& a, const auto& b) { return a.second < b.second; })->first;
     return new Node(majority_label);

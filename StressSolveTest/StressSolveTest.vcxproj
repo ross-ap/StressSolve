@@ -96,11 +96,13 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -156,12 +158,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\DataHandler.cpp" />
+    <ClCompile Include="..\src\DecisionTree.cpp" />
     <ClCompile Include="..\src\Node.cpp" />
-    <ClCompile Include="StressSolveTest.cpp" />
+    <ClCompile Include="..\src\Student.cpp" />
+    <ClCompile Include="..\src\SuggestionMaker.cpp" />
+    <ClCompile Include="NodeTest.cpp" />
+    <ClCompile Include="DecisionTreeTest.cpp" />
+    <ClCompile Include="SuggestionMakerTest.cpp" />
+    <ClCompile Include="StudentTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\DataHandler.h" />
+    <ClInclude Include="..\include\DecisionTree.h" />
     <ClInclude Include="..\include\json.hpp" />
     <ClInclude Include="..\include\Node.h" />
+    <ClInclude Include="..\include\Student.h" />
+    <ClInclude Include="..\include\SuggestionMaker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\bearer_token.txt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </Text>
+    <Text Include="..\bearer_token_empty.txt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

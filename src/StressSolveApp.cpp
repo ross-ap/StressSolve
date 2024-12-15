@@ -281,9 +281,16 @@ void StressSolveApp::on_predictButton_clicked() {
 
 }
 
+void StressSolveApp::on_bearerTokenPathChooseButton_clicked() {
+	QString fileFullPath = QFileDialog::getOpenFileName(this, "Select Bearer Token", "", "Text Files (*.txt)");
+	if (!fileFullPath.isEmpty()) {
+		ui.bearerTokenPathLabel->setText(fileFullPath);
+	}
+}
+
 void StressSolveApp::on_getSuggestionButton_clicked() {
 	ui.suggestionText->setPlainText("Getting suggestion...");
-    std::string suggestion = stressSolve->give_suggestion(*currentStudent);
+	std::string suggestion = stressSolve->give_suggestion(*currentStudent, ui.bearerTokenPathLabel->text().toStdString());
 	ui.suggestionText->setPlainText(QString::fromStdString(suggestion));
 	if (suggestion.find("Something went wrong") != std::string::npos) {
 		ui.getSuggestionButton->setEnabled(true);
