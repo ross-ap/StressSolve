@@ -20,8 +20,6 @@ set(SRC_FILES
     src/Node.cpp
     include/RandomForest.h
     src/RandomForest.cpp
-    include/stdafx.h
-    src/stdafx.cpp
     include/StressSolve.h
     src/StressSolve.cpp
     include/StressSolveApp.h
@@ -36,10 +34,7 @@ set(SRC_FILES
 )
 
 qt_add_executable(StressSolveApp ${SRC_FILES}) 
-
-file(GLOB RESOURCE_FILES "resources/*.qrc")
-set(CMAKE_MACRO_RESOURCE ${RESOURCE_FILES})
-qt_add_resources(StressSolveApp ${CMAKE_MACRO_RESOURCE}) 
+qt_add_resources(StressSolveApp "resources/StressSolveApp.qrc") 
 
 target_link_libraries(StressSolveApp PRIVATE Qt6::Widgets Qt6::Core CURL::libcurl)
 set_target_properties(StressSolveApp PROPERTIES
@@ -52,3 +47,4 @@ add_custom_command(TARGET StressSolveApp POST_BUILD
         ${CMAKE_SOURCE_DIR}/bearer_token.txt
         ${CMAKE_BINARY_DIR}/Debug/bearer_token.txt
 )
+
