@@ -1,5 +1,3 @@
-#include "stdafx.h"
-
 #include <iostream>
 #include <numeric>
 #include <random>
@@ -120,7 +118,6 @@ float RandomForest::k_fold_cross_validation(int fold_count, const std::vector<st
 
         float accuracy = static_cast<float>(correct_predictions) / test_features.size();
         total_accuracy += accuracy;
-        qDebug() << "Fold " << (i + 1) << " Accuracy: " << accuracy;
     }
 
     return total_accuracy / fold_count;

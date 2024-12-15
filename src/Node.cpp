@@ -1,12 +1,28 @@
-#include "stdafx.h"
-
 #include "Node.h"
 #include "json.hpp"
 
 using json = nlohmann::json;
 
-Node::Node(int feature_index, float threshold)
-    : feature_index(feature_index), threshold(threshold), label(-1), is_leaf(false), left(nullptr), right(nullptr) {}
+Node::Node(int feature_index, float threshold) {
+
+	if (feature_index < 0 || feature_index > 20) {
+		throw std::invalid_argument("feature_index must be between 0 and 20");
+	}
+
+	if (threshold < 0) {
+		throw std::invalid_argument("threshold cannot be negative");
+	}
+	else if (threshold > 40) {
+		throw std::invalid_argument("threshold is too large");
+	}
+
+	this->feature_index = feature_index;
+	this->threshold = threshold;
+	this->label = -1;
+	this->is_leaf = false;
+	this->left = nullptr;
+	this->right = nullptr;
+}
 
 Node::Node(int label)
     : is_leaf(true), feature_index(-1), threshold(0), label(label), left(nullptr), right(nullptr) {}

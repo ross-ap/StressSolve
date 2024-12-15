@@ -1,9 +1,9 @@
-#include "stdafx.h"
 #include <algorithm>
 #include <fstream>
 #include <limits>
 #include <sstream>
 
+#include <QtWidgets>
 #include "DataHandler.h"
 
 void DataHandler::reset() {

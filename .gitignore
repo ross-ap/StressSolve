@@ -36,8 +36,10 @@
 .vs/
 
 # Compiled files
+StressSolveTest/x64/
 StressSolveApp/
 build/
+x64/
 
 # User files
 *.json

@@ -86,7 +86,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -97,7 +97,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <QtMoc>
-      <PrependInclude>stdafx.h;%(PrependInclude)</PrependInclude>
+      <PrependInclude>%(PrependInclude)</PrependInclude>
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
@@ -129,7 +129,6 @@
     <ClInclude Include="include\DecisionTree.h" />
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\RandomForest.h" />
-    <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\StressSolve.h" />
     <ClInclude Include="include\Student.h" />
     <ClInclude Include="include\SuggestionMaker.h" />
@@ -141,10 +140,6 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\RandomForest.cpp" />
-    <ClCompile Include="src\stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\StressSolve.cpp" />
     <ClCompile Include="src\StressSolveApp.cpp" />
     <ClCompile Include="src\Student.cpp" />

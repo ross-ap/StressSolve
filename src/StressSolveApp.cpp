@@ -1,9 +1,9 @@
-#include "stdafx.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 
+#include <QtWidgets>
 #include <QFileDialog>
 
 #include "StressSolveApp.h"
